@@ -1,0 +1,29 @@
+name: Frontend CI/CD to S3
+
+on:
+  push:
+    branches:
+      - main # Or whichever branch triggers deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build React App
+        run: npm run build
+
+      - name: Configure AWS CLI
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set default.region us-east-1  # Change if needed
+
+      - name: Deploy to S3
+        run: aws s3 sync build/ s3://devops-project-frontend --delete
