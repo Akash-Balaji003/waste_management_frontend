@@ -6,6 +6,8 @@ function Login() {
     const navigate = useNavigate();
     const { setUserData } = useUserContext(); // Access the global state setter function
 
+    const backendUrl = "http://54.249.146.174:8000/";
+
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({ email: '', password: '' });
@@ -30,7 +32,7 @@ function Login() {
       
         if (formIsValid) {
           try {
-            const response = await fetch("http://127.0.0.1:8000/login", {
+            const response = await fetch(`${backendUrl}login`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ phone_number: phone, password }),

@@ -3,6 +3,8 @@ import { FiUpload } from "react-icons/fi"; // Upload Icon
 import { IoClose } from "react-icons/io5"; // Close Icon
 import Image from "../assets/WM_Image2.jpg"; // Your logo image import
 
+const backendUrl = "http://54.249.146.174:8000/";
+
 const FileUpload = ({ submitLabel = "Submit", fileLabel = "Upload File" }) => {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [prediction, setPrediction] = useState(null);
@@ -35,7 +37,7 @@ const FileUpload = ({ submitLabel = "Submit", fileLabel = "Upload File" }) => {
     selectedFiles.forEach((file) => formData.append("file", file));
   
     try {
-      const response = await fetch("http://localhost:8000/predict", {
+      const response = await fetch(`${backendUrl}predict`, {
         method: "POST",
         body: formData,
       });

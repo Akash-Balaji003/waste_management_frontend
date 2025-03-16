@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 
+const backendUrl = "http://54.249.146.174:8000/";
+
 function Register() {
     const navigate = useNavigate();
 
@@ -30,7 +32,7 @@ function Register() {
 
       if (formIsValid) {
         try {
-            const response = await fetch("http://127.0.0.1:8000/register", {
+            const response = await fetch(`${backendUrl}register`, {
               method: "POST",
               body: JSON.stringify({ username: name ,phone_number: phone, password: password }),
             });
