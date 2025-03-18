@@ -3,7 +3,7 @@ import { FiUpload } from "react-icons/fi"; // Upload Icon
 import { IoClose } from "react-icons/io5"; // Close Icon
 import Image from "../assets/WM_Image2.jpg"; // Your logo image import
 
-const backendUrl = "http://54.249.146.174:8000/";
+const backendUrl = "http://43.207.203.38:8000/";
 
 const FileUpload = ({ submitLabel = "Submit", fileLabel = "Upload File" }) => {
   const [selectedFiles, setSelectedFiles] = useState([]);

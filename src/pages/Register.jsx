@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 
-const backendUrl = "http://54.249.146.174:8000/";
+const backendUrl = "http://43.207.203.38:8000/";
 
 function Register() {
     const navigate = useNavigate();

@@ -6,7 +6,7 @@ function Login() {
     const navigate = useNavigate();
     const { setUserData } = useUserContext(); // Access the global state setter function
 
-    const backendUrl = "http://54.249.146.174:8000/";
+    const backendUrl = "http://43.207.203.38:8000/";
 
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
