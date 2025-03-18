@@ -9,11 +9,13 @@ const AdminAddUsers = () => {
 
     return (
         <div className="flex h-screen">
-        {/* Left Panel */}
-        <LeftPanel userData={userData} />
+          {/* Left Panel */}
+          <LeftPanel userData={userData} />
 
-        {/* Main Content with custom button label */}
-        <Awareness/>
+          {/* Main Content with custom button label, wrapped with a scrollable container */}
+          <div className="flex-1 overflow-y-auto">
+              <Awareness/>
+          </div>
         </div>
     );
 };

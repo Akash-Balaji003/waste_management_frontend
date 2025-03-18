@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiUpload } from "react-icons/fi"; // Upload Icon
 import { IoClose } from "react-icons/io5"; // Close Icon
-import Image from "../assets/WM_Image2.jpg"; // Your logo image import
+import Image from "../assets/WM_Image.png"; // Your logo image import
 
 const backendUrl = "http://127.0.0.1:8000/";
 
@@ -68,7 +68,7 @@ const FileUpload = ({ submitLabel = "Submit", fileLabel = "Upload File" }) => {
       <div className="flex flex-col h-5/6 items-center justify-center space-y-4">
         {/* Upload Button */}
         <button
-          className="bg-gray-600 text-white px-6 py-2 rounded-3xl flex items-center space-x-2 min-w-[150px] whitespace-nowrap"
+          className="bg-gray-600 text-white px-6 py-2 rounded-3xl flex items-center space-x-2 min-w-[150px] whitespace-nowrap hover:bg-gray-700 transition-all duration-200 ease-in-out transform hover:scale-95"
           onClick={() => document.getElementById("fileInput").click()}
         >
           <span>{fileLabel}</span> {/* Ensure label is visible */}
@@ -105,7 +105,7 @@ const FileUpload = ({ submitLabel = "Submit", fileLabel = "Upload File" }) => {
         {/* Submit Button */}
         <div className="flex justify-center space-x-4">
           <button
-            className="bg-blue-900 text-white px-6 py-2 rounded"
+            className="bg-blue-800 text-white px-6 py-2 rounded hover:bg-blue-900 transition-all duration-200 ease-in-out transform hover:scale-105"
             disabled={selectedFiles.length === 0}
             onClick={handleSubmit}
           >
