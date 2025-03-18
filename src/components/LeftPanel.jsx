@@ -12,10 +12,12 @@ const LeftPanel = ({
             <h2 className="text-xl font-bold mb-1">Welcome</h2>
             <p className="text-lg mb-8">{userData?.username}</p>
             <nav className="space-y-4">
-                <a className="block hover:underline" >
+                <a className="block hover:underline" onClick={()=>navigate("/home")} >
                 Home
                 </a>
-
+                <a className="block hover:underline" onClick={()=>navigate("/classification")}>
+                File Upload
+                </a>
                 <a className="block hover:underline" onClick={()=>navigate("/")}>
                 Logout
                 </a>

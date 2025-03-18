@@ -1,6 +1,6 @@
 import React from "react";
 import LeftPanel from "../components/LeftPanel"; // Import the LeftPanel component
-import Awareness from "../components/Awareness"; // Import the MainContent component
+import FileUpload from "../components/FileUpload"; // Import the MainContent component
 import { useUserContext } from '../contexts/UserContext'; // Import the custom hook
 
 const AdminAddUsers = () => {    
@@ -13,7 +13,11 @@ const AdminAddUsers = () => {
         <LeftPanel userData={userData} />
 
         {/* Main Content with custom button label */}
-        <Awareness/>
+        <FileUpload
+            submitLabel="Submit" // Custom label for submit button
+            cancelLabel="Go Back"    // Custom label for cancel button
+            fileLable="Upload Image" // Cancel function
+        />
         </div>
     );
 };
