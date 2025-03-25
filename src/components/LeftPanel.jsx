@@ -15,7 +15,7 @@ const LeftPanel = ({ userData }) => {
             Home
           </a>
           <a className="block hover:underline" onClick={() => navigate("/classification")}>
-            File Upload
+            Upload File
           </a>
         </nav>
       </div>
